@@ -19,6 +19,7 @@ if(empty($_SESSION)){
             justify-content:center;
             display: flex;
             background-color: grey;
+        
         }
     </style>
 </head>
@@ -37,9 +38,11 @@ if(empty($_SESSION)){
             <div class="card-body">
                 <h5 class="card-title">Nome Lista </h5>
             </div>
+            <div class="card">
+                <?php
+                    include("exibirListas.php");
+                ?>
+            </div>
         </div>
         </div>
-    
-
-
 </body>

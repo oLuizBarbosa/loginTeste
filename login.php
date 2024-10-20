@@ -9,7 +9,7 @@
 
     $usuario = $_POST["usuario"];
     $senha = $_POST["senha"];
-    
+    $id = $_POST["id"];
 
     $sql = "SELECT * FROM usuarios
             WHERE usuario = '{$usuario}'
