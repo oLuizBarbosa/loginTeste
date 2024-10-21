@@ -4,7 +4,7 @@
             WHERE id_usuario=".$_REQUEST["id_usuario"];
     $res = $conn->query($sql);
 
-    $qtd = $res->;
+    $qtd = //procurar um meio de saber quantas linhas foram pegas;
 
     if ($qtd > 0) {
         print "<table class= 'table table-hover table-striped table-bordered'>";
