@@ -40,7 +40,7 @@ if(empty($_SESSION)){
             </div>
             <div class="card">
                 <?php
-                    include("exibirListas.php");
+                    
                 ?>
             </div>
         </div>

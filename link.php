@@ -1,7 +1,16 @@
 <?php
-    define('HOST', 'localhost');
-    define('USER','root');
-    define('PASS','');
-    define('BASE','syslogin');
+    $HOST = 'localhost'; 
+    $BASE = 'syslogin';
+    $USER = 'root';
+    $PASS = '';
 
-    $conn = mysqli_connect(HOST, USER, PASS, BASE);
+    try {
+        $conn = new PDO("mysql:host=$HOST;dbname=$BASE", $USER, $PASS);
+
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+    } catch (PDOException $e) {
+        
+        echo "Erro na conexão: " . $e->getMessage();
+    }
+    ?>

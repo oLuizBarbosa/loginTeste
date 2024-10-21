@@ -1,31 +1,22 @@
 <?php
-    session_start();
-
-    if(empty($_POST) or (empty($_POST["usuario"]) or (empty($_POST["senha"])))){
-        print"<script>location.href ='index.php';</script>";
+    include("link.php");
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $usuario = $_POST['usuario'];
+        $senha = $_POST['senha'];
+        
+        $sql = "SELECT * FROM usuarios WHERE usuario = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$usuario]);
+        $user = $stmt->fetch();
+        
+        if ($user && $user['senha'] == $senha) {
+            session_start();
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['nome'] = $user['nome'];
+            header('Location: dashboard.php');
+        } else {
+            echo "Usuário ou senha incorretos!";
+        }
     }
-
-    include('link.php');
-
-    $usuario = $_POST["usuario"];
-    $senha = $_POST["senha"];
-    $id = $_POST["id"];
-
-    $sql = "SELECT * FROM usuarios
-            WHERE usuario = '{$usuario}'
-            AND senha = '{$senha}'";
-
-    $res = $conn->query($sql) or die($conn->error);
-
-    $row = $res->fetch_object();
-
-    $qtd = $res->num_rows;
-
-    if($qtd > 0){
-        $_SESSION["usuario"] = $usuario;
-        $_SESSION["nome"]    = $row->nome;
-        print"<script>location.href='dashboard.php';</script>";
-    }else{
-        print "<script>alert('Usuário e/ou senha incorreto(s)')</script>";
-        print "<script>location.href='index.php';</script>";
-    }
+    
+?>
