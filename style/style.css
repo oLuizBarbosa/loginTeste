@@ -16,7 +16,7 @@ body {
 
 .dashboard {
     display: flex; 
-    height: 100vh; /* Ocupa a altura total da tela */
+    height: 90vh; /* Ocupa a altura total da tela */
 }
 
 
@@ -28,16 +28,23 @@ body {
 
 
 .barra-lateral {
+    display: flex;
     flex: 1; 
     padding: 20px;
     background-color: #ddd;
+    height: 90vh;
+    box-sizing: border-box;
+    justify-content: space-between;
+    justify-items: center;
+    flex-direction: column;
 }
 
 .listas-de-tarefa{
     background-color: #c3e01a;
     border-radius: 15px;
     padding: 45px;
-    height: 80%;
+    height: 100vh;
+    
 }
 
 /* Ajuste de título e botões */
