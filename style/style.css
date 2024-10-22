@@ -1,0 +1,60 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.barra-topo{
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.dashboard {
+    display: flex; 
+    height: 100vh; /* Ocupa a altura total da tela */
+}
+
+
+.conteudo-principal {
+    flex: 3; 
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+
+.barra-lateral {
+    flex: 1; 
+    padding: 20px;
+    background-color: #ddd;
+}
+
+.listas-de-tarefa{
+    background-color: #c3e01a;
+    border-radius: 15px;
+    padding: 45px;
+    height: 80%;
+}
+
+/* Ajuste de título e botões */
+h2, h3 {
+    margin-top: 0;
+}
+
+button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}

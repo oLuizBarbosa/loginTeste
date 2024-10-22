@@ -11,32 +11,18 @@ if(empty($_SESSION)){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sistema de login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        .tarefas{
-            width: 100%;
-            height: 100vh;
-            align-items: center;
-            justify-content:center;
-            display: flex;
-            background-color: grey;
-        
-        }
-    </style>
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <a href="navbar">Gerenciador de tarefas</a>
+    <nav class="barra-topo">
             <?php
-                print"Olá, ".$_SESSION["nome"];
-                print "<a href='../controller/logout.php' class='btn btn-danger'>Sair<a>";
+                print"<h3>Olá, ".$_SESSION['nome']; print"</h3>";
+                print "<div><a href='../controller/logout.php' class='btn btn-danger'>Sair</a>";print"</div>";
             ?>
-        </div>
-        
     </nav>
     <div>
         <?php
-        include("../view/exibirListas.php");
+        include("../view/exibirLista.php");
         ?>
     </div>
     
