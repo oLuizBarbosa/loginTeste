@@ -31,7 +31,7 @@
                 <div class="card-body">
                     <h3>Faça o login</h3>
                 </div>
-                <form action="login.php" method="POST">
+                <form action="controller/login.php" method="POST">
                     <div>
                         <div class="mb-3"></div>
                         <label>Usuario</label>

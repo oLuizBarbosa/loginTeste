@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(empty($_SESSION)){
-    print "<script>location.href='index.php;</script>'";
+    header('Location: ../index.php');
 }
 ?>
 <!doctype html>
@@ -29,20 +29,16 @@ if(empty($_SESSION)){
             <a href="navbar">Gerenciador de tarefas</a>
             <?php
                 print"Olá, ".$_SESSION["nome"];
-                print "<a href='logout.php' class='btn btn-danger'>Sair<a>";
+                print "<a href='../controller/logout.php' class='btn btn-danger'>Sair<a>";
             ?>
         </div>
+        
     </nav>
-    <div class="tarefas">
-        <div class="card" style="width: 25rem; height: 50vh">
-            <div class="card-body">
-                <h5 class="card-title">Nome Lista </h5>
-            </div>
-            <div class="card">
-                <?php
-                    
-                ?>
-            </div>
-        </div>
-        </div>
+    <div>
+        <?php
+        include("../view/exibirListas.php");
+        ?>
+    </div>
+    
 </body>
+

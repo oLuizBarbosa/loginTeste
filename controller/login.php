@@ -1,5 +1,5 @@
 <?php
-    include("link.php");
+    include("../model/link.php");
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $usuario = $_POST['usuario'];
         $senha = $_POST['senha'];
@@ -13,9 +13,10 @@
             session_start();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['nome'] = $user['nome'];
-            header('Location: dashboard.php');
+            header('Location: ../view/dashboard.php');
         } else {
-            echo "Usuário ou senha incorretos!";
+            header('Location: ../index.php');
+            print  "<script>alert('Senha e/ou usuário incorreto(s)!');</script>";
         }
     }
     
