@@ -3,54 +3,36 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sistema de login</title>
+    <title>Web Task</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        body{
-            background-color: #F2F2F2;
-        }
-        .login{
-            width: 100%;
-            height: 100vh;
-            align-items: center;
-            justify-content:center;
-            display: flex;
-        }
-        
-
-    </style>
+    <link rel="stylesheet" href="style/login/style.css">
   </head>
   <body>
     <div class="login">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 offset-lg-4"></div>
-                <div class="card">
+        <div >
+            <div class="collum card-login">
+                <div class="card card-login">
         
                 <div class="card-body">
-                <div class="card-body">
-                    <h3>Faça o login</h3>
-                </div>
-                <form action="controller/login.php" method="POST">
-                    <div>
-                        <div class="mb-3"></div>
-                        <label>Usuario</label>
-                        <input type="text"
-                        name="usuario"
-                        class="form-control">
+                <div>
+                    <h1 style="text-align: center" class="gradient-text">Login</h1>
                     </div>
-                    <div>
-                        <div class="mb-3"></div>
-                        <label>Senha</label>
-                        <input type="password"
-                        name="senha"
-                        class="form-control">
-                    </div>
-                    <div>
-                        <div class="mb-3" style="margin-top: 10px;">
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                        </div>
-                </form>
+                    <form action="controller/login.php" method="POST">
+
+                    <div class="mb-3"></div>
+                    <input type="text"
+                    name="usuario"
+                    class="form-control label-login" placeholder="Usuário">
+
+                    <div class="mb-3"></div>
+                    <input type="password"
+                    name="senha"
+                    class="form-control label-login" placeholder="Senha">
+
+                    <button type="submit" class="btn btn-primary form-control bt-login">Enviar</button>
+                        <p style="text-align: center;">Ainda não tem uma conta?<a href="#"> Criar conta</a></p>
+
+                    </form>
                 </div>
                 </div>
             </div>
