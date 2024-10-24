@@ -1,5 +1,5 @@
 <?php
-include("model/link.php");
+include("../model/link.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO usuarios (nome, usuario, email, senha) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->execute([$nome, $usuario, $email, $senha]);
-    
-    
+    include("login.php");
 }
 ?>

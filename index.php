@@ -15,7 +15,7 @@
         
                 <div class="card-body">
                 <div>
-                    <h1 style="text-align: center" class="gradient-text">Login</h1>
+                    <h1 style="text-align: center">Login</h1>
                     </div>
                     <form action="controller/login.php" method="POST">
 
@@ -30,7 +30,7 @@
                     class="form-control label-login" placeholder="Senha">
 
                     <button type="submit" class="btn btn-primary form-control bt-login">Enviar</button>
-                        <p style="text-align: center;">Ainda não tem uma conta?<a href="#"> Criar conta</a></p>
+                        <p style="text-align: center;">Ainda não tem uma conta?<a href="view/registrar.php"> Criar conta</a></p>
 
                     </form>
                 </div>
