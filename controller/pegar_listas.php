@@ -7,6 +7,4 @@ $sql = "SELECT * FROM lista_tarefas WHERE id_usuario = ?";
 $stmt = $conn->prepare($sql);
 $stmt->execute([$user_id]);
 $listas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
 ?>
