@@ -4,16 +4,18 @@ include_once '../model/link.php';
 
 
 $listaId = isset($_GET['id']) ? intval($_GET['id']) : 0;
-
+$_SESSION['listaId'] = $listaId;
 
 if ($listaId > 0) {
     
     $stmt = $conn->prepare("SELECT nome, descricao, data_criacao, data_conclusao, situacao FROM tarefas WHERE id_lista_tarefa = ?");
     $stmt->execute([$listaId]);
     $tarefas = $stmt->fetchAll();
+    
 
     if ($tarefas) {
-        echo "<h2>Nome da lista</h2>";
+        include "pegar_nome_lista.php";
+        echo "<h2>".$lista[0]['nome']."</h2>";
         echo "<ul>";
         foreach ($tarefas as $tarefa) {
             echo "<li><strong>" 
