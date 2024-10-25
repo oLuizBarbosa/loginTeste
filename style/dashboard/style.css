@@ -1,5 +1,4 @@
 body {
-    font-family: Afacade;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +7,8 @@ body {
     
 }
 .barra-topo{
-    height: 7vh;
+    font-family: Albert_Sans;
+    height: 19vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -19,7 +19,7 @@ body {
 
 .dashboard {
     display: flex; 
-    height: 90vh; /* Ocupa a altura total da tela */
+    height: 90vh; 
 }
 
 
@@ -53,7 +53,7 @@ body {
 }
 .card-tarefa{
     height: 10vh;
-    color: black;
+    color: rgb(255, 255, 255);
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.377);
 }
@@ -61,17 +61,17 @@ body {
     background-color: rgba(255, 255, 255, 0.63);
 }
 
-h2, h3 {
+h3 {
     margin-top: 0;
+    color: white;
     
 }
 
-
 @font-face {
     font-family: "Afacade";
-    src: url('../style/fonts/Afacad/Afacad-VariableFont_wght.ttf');
+    src: url('../fonts/Afacad/Afacad-VariableFont_wght.ttf');
 }
 @font-face {
     font-family: "Albert_Sans";
-    src: url('../style/fonts/Albert_Sans/AlbertSans-VariableFont_wght.ttf');
+    src: url('../fonts/Albert_Sans/AlbertSans-VariableFont_wght.ttf');
 }

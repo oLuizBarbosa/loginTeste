@@ -10,7 +10,7 @@ $listas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($listas as $lista) {
     // Exibe o nome da lista
-    echo "<h2>" . htmlspecialchars($lista['nome']) . "</h2>";
+    echo "<h2>" . $lista['nome'] . "</h2>";
 
     // Consulta para buscar as tarefas da lista atual
     $sql = "SELECT * FROM tarefas WHERE id_lista_tarefa = ?";
