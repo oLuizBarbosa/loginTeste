@@ -13,12 +13,12 @@
                     <?php
                         include("..\controller\pegar_listas.php");
                         foreach($listas as $lista){
-                            print "<button href='#' class='card-tarefa' onclick='carregarConteudo(" .$lista['id'].")'>" .$lista['nome']. "</button>";
+                            print "<button href='#' class='card-lista' onclick='carregarConteudo(" .$lista['id'].")'>" .$lista['nome']. "</button>";
                         }    
                     ?>
 
                 </div>
-                <button class="card-tarefa">Criar Nova Lista</button>
+                <button class="card-lista">Criar Nova Lista</button>
         </div>
     </div>
     <script src="..\controller\js\mudar_tarefa.js"></script>

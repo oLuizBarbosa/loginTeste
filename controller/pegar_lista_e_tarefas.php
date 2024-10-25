@@ -1,5 +1,5 @@
 <?php
-// Inclua a conexão com o banco de dados
+
 include_once '../model/link.php';
 
 
@@ -15,20 +15,23 @@ if ($listaId > 0) {
 
     if ($tarefas) {
         include "pegar_nome_lista.php";
-        echo "<h2>".$lista[0]['nome']."</h2>";
-        echo "<ul>";
+        print "<h2>".$lista[0]['nome']."</h2>";
+        
         foreach ($tarefas as $tarefa) {
-            echo "<li><strong>" 
-                    .$tarefa['nome'] . "</strong>: " .$tarefa['descricao'] . 
-                " - Data de criação: " .$tarefa['data_criacao'] . 
-                " - Data limite: " .$tarefa['data_conclusao']. 
-                " - Status: " . $tarefa['situacao'] . "</li>";
+            
+            print "<div class='form-chek card-tarefa'>";
+            print "<input class='form-check-input' type='checkbox' value=''>
+            <label class='form-check-label' for='flexCheckDefault'>";
+            print "<h2>" 
+                    .$tarefa['nome'] . "</h2></strong> " .$tarefa['descricao'] .
+                
+                " </div>";
         }
-        echo "</ul>";
+        
     } else {
-        echo "<p>Nenhuma tarefa encontrada para esta lista.</p>";
+        print "<p>Nenhuma tarefa encontrada para esta lista.</p>";
     }
 } else {
-    echo "<p>Lista de tarefas não encontrada.</p>";
+    print "<p>Lista de tarefas não encontrada.</p>";
 }
 ?>
