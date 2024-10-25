@@ -15,7 +15,7 @@ a{
     color: #7EFFE5;
 }
 
-.login{
+.principal{
     width: 100%;
     height: 100vh;
     align-items: center;
@@ -24,33 +24,63 @@ a{
     background-color: #020202;
 }
 
-.label-login{
+.label-central{
     background-color: #f8f8f8;
     font-family: Afacade;
     font-weight: bolder;
     font-size: 1.5em;
     border-radius: 10px;
+    box-shadow: 0 0 20em 20px  rgba(255, 255, 255, 0.274);
 }
-.bt-login{
+.bt-confirmar{
     height: 2em;
     font-family: Afacade;
     font-weight: bold;
     font-size: 1.5em;
+    margin: 0 auto;
     color: #efefef;
-    margin-top: 1em;
+    margin-top: 0.7em;
     margin-bottom: 0.5em;
     background-color: #7EFFE5;
     border-radius: 10px;
 }
-.bt-login:hover{
+.bt-confirmar:hover{
     background-color: #68d3bd;
 }
 
-.card-login{
-    background-color: transparent;
+.card-central{
+    background-color: transparent; /*rgba(255, 255, 255, 0.027);*/
     width: 50vh;
 }
 
+.pulse:hover {
+    animation: pulse 0.7s infinite;
+    margin: 0 auto;
+    margin-top: 0.7em;
+    margin-bottom: 0.5em;
+    animation-direction: alternate;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+  
+  @-webkit-keyframes pulse {
+    0% {
+      -webkit-transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(1.01);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.01);
+
+    }
+  }
 
 
 @font-face {

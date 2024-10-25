@@ -16,7 +16,7 @@ if(empty($_SESSION)){
 <body>
     <nav class="barra-topo">
             <?php
-                print"<h3>Olá, ".$_SESSION['nome']; print"</h3>";
+                print"<h3 class='titulo'>Olá, ".$_SESSION['nome']; print"</h3>";
                 print "<div><a href='../controller/logout.php' class='btn btn-danger'>Sair</a>";print"</div>";
             ?>
     </nav>

@@ -1,12 +1,12 @@
 <body>
     <div class="dashboard">
-        <!-- Seção Principal Maior -->
-        <div class="conteudo-principal" id="conteudo-principal">
+        <?php
+        print("<div class='conteudo-principal' id='conteudo-principal'>
             <h2>Aqui estarão suas tarefas</h2>
             <p>Selecione uma lista de tarefas</p>
-        </div>
-
-        <!-- Seção Menor à Direita -->
+            </div>")
+            
+        ?>
         <div class="barra-lateral">
                 <h2 style="text-align: center; max-height: 100%;">Minhas Listas</h2>
                 <div class="listas-de-tarefa">
