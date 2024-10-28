@@ -25,5 +25,6 @@ if(empty($_SESSION)){
         include("../view/exibirConteudo.php");
         ?>
     </div>
+    <script src="../controller/js/menu.js"></script>
 </body>
 

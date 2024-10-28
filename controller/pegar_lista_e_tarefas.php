@@ -7,7 +7,7 @@ $listaId = isset($_GET['id']) ? intval($_GET['id']) : 0;
 $_SESSION['listaId'] = $listaId;
 
 if ($listaId > 0) {
-    
+    print $listaId;
     $stmt = $conn->prepare("SELECT nome, descricao, data_criacao, data_conclusao, situacao FROM tarefas WHERE id_lista_tarefa = ?");
     $stmt->execute([$listaId]);
     $tarefas = $stmt->fetchAll();
@@ -15,6 +15,22 @@ if ($listaId > 0) {
 
     if ($tarefas) {
         include "pegar_nome_lista.php";
+
+        print "<div class='menu-overlay' id='menu'>
+        <button class='close-btn' onclick='fecharMenu()'>×</button>
+        <h3>Criar Tarefa</h3>
+        <ul>
+        <form action='../controller/criar_tarefa.php' method='POST'>
+            <div class='div-forms'>
+            <li><input class='form-control' type='text' placeholder='Nome' name='nome_tarefa'></li>
+            <li><textarea class='form-control' placeholder='Descrição' name='descricao_tarefa'></textarea></li>
+            <li><input class='form-control' type='date' placeholder='Data final' name='data_final' required></li>
+            <button class='btn' type='submit'>Confirmar</button>
+            </div>
+        </ul>
+        </form>
+        </div>";
+        
         print "<h2>".$lista[0]['nome']."</h2>";
         
         foreach ($tarefas as $tarefa) {
@@ -27,6 +43,8 @@ if ($listaId > 0) {
                 
                 " </div>";
         }
+        print "<button class='open-btn' onclick=
+        'abrirMenu()'>☰ Menu</button>";
         
     } else {
         print "<p>Nenhuma tarefa encontrada para esta lista.</p>";

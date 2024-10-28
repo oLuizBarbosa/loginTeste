@@ -84,6 +84,76 @@ button{
     font-family: Albert_Sans;
 }
 
+
+
+
+.menu-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 30em;
+    height: 30em;
+    background-color: #ffffff1a;
+    color: white;
+    padding-top: 60px;
+    transform: translate(-50%, -50%) scale(0); /* Fora da tela e escalado */
+    transition: transform 0.3s ease; /* Animação de zoom */
+    z-index: 1000;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    
+}
+
+.menu-overlay ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-overlay ul li {
+    padding: 10px 10px;
+
+}
+.div-forms{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.menu-overlay ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.menu-overlay ul li a:hover {
+    color: #ddd;
+}
+
+/* Botão para fechar o menu */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Botão para abrir o menu */
+.open-btn {
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Classe ativa para abrir o menu */
+.menu-overlay.active {
+    transform: translate(-50%, -50%) scale(1); /* Exibe o menu no centro com um zoom suave */
+}
+
 @font-face {
     font-family: "Afacade";
     src: url('../fonts/Afacad/Afacad-VariableFont_wght.ttf');
