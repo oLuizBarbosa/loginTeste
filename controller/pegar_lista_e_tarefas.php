@@ -23,7 +23,7 @@ if ($id_lista > 0) {
         <form action='../controller/criar_tarefa.php' method='POST'>
 
             <div class='div-forms'>
-            <li><input class='form-control' type='hidden' name='id_lista'>".$_SESSION['id_lista'];
+            <li><input class='form-control' type='hidden' value='".$_SESSION['id_lista']."' name='id_lista'>";
             print "</li>
             <li><input class='form-control' type='text' placeholder='Nome' name='nome_tarefa'></li>
             <li><textarea class='form-control' placeholder='Descrição' name='descricao_tarefa'></textarea></li>
