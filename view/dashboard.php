@@ -32,5 +32,6 @@ if(empty($_SESSION)){
     </div>
 
     <script src="../controller/js/menu.js"></script>
+    
 </body>
 

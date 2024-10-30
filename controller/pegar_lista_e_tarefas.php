@@ -15,24 +15,19 @@ if ($id_lista > 0) {
 
     if ($tarefas) {
         include "pegar_nome_lista.php";
-
         print "<div class='menu-overlay' id='menu'>
         <button class='close-btn' onclick='fecharMenu()'>×</button>
         <h3>Criar Tarefa</h3>
         <ul>
-        <form action='../controller/criar_tarefa.php' method='POST'>
-
+        <div id = 'formTarefa'>
             <div class='div-forms'>
-            <li><input class='form-control' type='hidden' value='".$_SESSION['id_lista']."' name='id_lista'>";
-            print "</li>
-            <li><input class='form-control' type='text' placeholder='Nome' name='nome_tarefa'></li>
-            <li><textarea class='form-control' placeholder='Descrição' name='descricao_tarefa'></textarea></li>
-            <li><input class='form-control' type='date' placeholder='Data final' name='data_final' required></li>
-            <button class='btn' type='submit'>Confirmar</button>
+            <li><input class='form-control' type='text' placeholder='Nome' name='nome_tarefa' id='nome_tarefa' required></li>
+            <li><textarea class='form-control' placeholder='Descrição' name='descricao_tarefa' id='descricao_tarefa' required></textarea></li>
+            <li><input class='form-control' type='date' placeholder='Data final' name='data_final' id='data_final' required></li>
+            <button class='btn' onclick='criarTarefa(".$id_lista.")'>Confirmar</button>
             </div>
-
         </ul>
-        </form>
+        </div>
         </div>";
 
         //NOME DA LISTA ATUAL
