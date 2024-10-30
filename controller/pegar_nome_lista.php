@@ -1,11 +1,10 @@
 <?php
 include("..\model\link.php");
-$listaId = $_SESSION['listaId'];
+$id_lista = $_SESSION['id_lista'];
 
 
-// Consulta para buscar as listas de tarefas do usuário
-$sql = "SELECT nome FROM lista_tarefas WHERE id = ?";
+// TRAZER O NOME DA LISTA ATUAL
+$sql = "SELECT * FROM lista_tarefas WHERE id = ?";
 $stmt = $conn->prepare($sql);
-$stmt->execute([$listaId]);
+$stmt->execute([$id_lista]);
 $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>

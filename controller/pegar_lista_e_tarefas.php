@@ -3,13 +3,13 @@
 include_once '../model/link.php';
 
 
-$listaId = isset($_GET['id']) ? intval($_GET['id']) : 0;
-$_SESSION['listaId'] = $listaId;
+$id_lista = $_GET['id'];
+$_SESSION['id_lista'] = $id_lista;
 
-if ($listaId > 0) {
-    print $listaId;
+if ($id_lista > 0) {
+    //print $listaId;
     $stmt = $conn->prepare("SELECT nome, descricao, data_criacao, data_conclusao, situacao FROM tarefas WHERE id_lista_tarefa = ?");
-    $stmt->execute([$listaId]);
+    $stmt->execute([$id_lista]);
     $tarefas = $stmt->fetchAll();
     
 
@@ -21,18 +21,22 @@ if ($listaId > 0) {
         <h3>Criar Tarefa</h3>
         <ul>
         <form action='../controller/criar_tarefa.php' method='POST'>
+
             <div class='div-forms'>
+            <li><input class='form-control' type='hidden' name='id_lista'>".$_SESSION['id_lista'];
+            print "</li>
             <li><input class='form-control' type='text' placeholder='Nome' name='nome_tarefa'></li>
             <li><textarea class='form-control' placeholder='Descrição' name='descricao_tarefa'></textarea></li>
             <li><input class='form-control' type='date' placeholder='Data final' name='data_final' required></li>
             <button class='btn' type='submit'>Confirmar</button>
             </div>
+
         </ul>
         </form>
         </div>";
-        
+
+        //NOME DA LISTA ATUAL
         print "<h2>".$lista[0]['nome']."</h2>";
-        
         foreach ($tarefas as $tarefa) {
             
             print "<div class='form-chek card-tarefa'>";
@@ -43,13 +47,13 @@ if ($listaId > 0) {
                 
                 " </div>";
         }
-        print "<button class='open-btn' onclick=
-        'abrirMenu()'>☰ Menu</button>";
+        print "<button class='open-btn ' onclick=
+        'abrirMenu()'>🖊 Nova Tarefa</button>";
         
     } else {
         print "<p>Nenhuma tarefa encontrada para esta lista.</p>";
     }
 } else {
-    print "<p>Lista de tarefas não encontrada.</p>";
+    print "<p>Lista de tarefas não encontrada.</p>";  
 }
-?>
+ 

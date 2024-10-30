@@ -1,9 +1,11 @@
 <?php
 session_start();
+//SE NÃO ESTIVER LOGADO...
 if(empty($_SESSION)){
     header('Location: ../index.php');
 }
 ?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -16,15 +18,19 @@ if(empty($_SESSION)){
 <body>
     <nav class="barra-topo">
             <?php
-                print"<h3>Olá, ".$_SESSION['nome']; print"</h3>";
-                print "<div><a href='../controller/logout.php' class='btn btn-danger'>Sair</a>";print"</div>";
+                print"<h3>Olá, ".$_SESSION['nome']."</h3>";
+                print "<div>
+                        <a href='../controller/logout.php' class='btn btn-danger'>Sair</a>
+                        </div>";
             ?>
     </nav>
+
     <div class="card-listas">
         <?php
         include("../view/exibirConteudo.php");
         ?>
     </div>
+
     <script src="../controller/js/menu.js"></script>
 </body>
 
