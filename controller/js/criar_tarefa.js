@@ -1,4 +1,6 @@
 function criarTarefa(id_lista) {
+    fecharMenu();
+    
     const nome_tarefa = document.getElementById('nome_tarefa').value;
     const descricao_tarefa = document.getElementById('descricao_tarefa').value;
     const data_final = document.getElementById('data_final').value;
@@ -16,6 +18,5 @@ function criarTarefa(id_lista) {
     };
     
     xhttp.send(`nome_tarefa=${nome_tarefa}&descricao_tarefa=${descricao_tarefa}&data_final=${data_final}&id_lista=${id_lista}`);
-    fecharMenu();
     carregarConteudo(id_lista);
 }
