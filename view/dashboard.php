@@ -30,6 +30,7 @@ if(empty($_SESSION)){
         include("../view/exibirConteudo.php");
         ?>
     </div>
+    <script src="..\controller\js\excluir.js"></script>
     <script src="..\controller\js\modificar_tarefas.js"></script>
     <script src="..\controller\js\menu.js"></script>
     <script src="..\controller\js\mudar_lista.js"></script>

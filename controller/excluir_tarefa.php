@@ -1,18 +1,23 @@
 <?php
-include("../model/link.php");
-session_start(); 
+include_once('../model/link.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $id_tarefa = $_POST['id_tarefa'];
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['tarefaId'])) {
+    $tarefaId = intval($_POST['tarefaId']);
+
     
-    try {
-        $sql = "DELETE FROM tarefas WHERE id=?";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute([$id_tarefa]);
+    $stmt = $conn->prepare("DELETE FROM tarefas WHERE id = :tarefaId");
+    $stmt->bindParam(':tarefaId', $tarefaId, PDO::PARAM_INT);
+
+    
+    if ($stmt->execute()) {
+        echo "success";
+    } else {
         
-    } catch (PDOException $e) {
-        echo "Erro ao inserir tarefa: " . $e->getMessage();
+        echo "Erro ao executar a exclusão: ";
+        print_r($stmt->errorInfo()); 
     }
-    
+} else {
+    echo "error: Dados não recebidos corretamente.";
 }
+?>
