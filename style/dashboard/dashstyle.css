@@ -63,11 +63,12 @@ body {
 .card-tarefa{
     display: flex;
     justify-items: center;
-    align-items: center;
+    align-items: start;
     height: 10vh;
     border: 0;
     margin-top: 0.7em;
     padding: 1em;
+    flex-direction: column;
 }
 .card-lista:hover{
     background-color: rgba(255, 255, 255, 0.63);
