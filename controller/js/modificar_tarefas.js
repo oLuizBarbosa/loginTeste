@@ -20,3 +20,9 @@ function criarTarefa(id_lista) {
     xhttp.send(`nome_tarefa=${nome_tarefa}&descricao_tarefa=${descricao_tarefa}&data_final=${data_final}&id_lista=${id_lista}`);
     carregarConteudo(id_lista);
 }
+
+function excluirTarefa(id_tarefa) {
+    xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "../controller/excluir_tarefa.php?id_tarefa="+id_tarefa, true);
+    
+}

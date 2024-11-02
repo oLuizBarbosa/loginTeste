@@ -19,7 +19,9 @@ body {
 .dashboard {
     display: flex; 
     height: 90vh; 
+    
 }
+
 
 
 .conteudo-principal {

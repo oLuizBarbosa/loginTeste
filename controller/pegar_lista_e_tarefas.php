@@ -8,11 +8,10 @@ $_SESSION['id_lista'] = $id_lista;
 
 if ($id_lista > 0) {
     //print $listaId;
-    $stmt = $conn->prepare("SELECT nome, descricao, data_criacao, data_conclusao, situacao FROM tarefas WHERE id_lista_tarefa = ?");
+    $stmt = $conn->prepare("SELECT id,nome, descricao, data_criacao, data_conclusao, situacao FROM tarefas WHERE id_lista_tarefa = ?");
     $stmt->execute([$id_lista]);
     $tarefas = $stmt->fetchAll();
     
-
     if ($tarefas) {
         include "pegar_nome_lista.php";
         print "<div class='menu-overlay' id='menu'>
@@ -34,13 +33,14 @@ if ($id_lista > 0) {
         print "<h2>".$lista[0]['nome']."</h2>";
         foreach ($tarefas as $tarefa) {
             
-            print "<div class='form-chek card-tarefa'>";
+            print "<div class='form-chek card-tarefa' style='margin-bottom: 2em'>";
             print "<input class='form-check-input' type='checkbox' value=''>
             <label class='form-check-label' for='flexCheckDefault'>";
             print "<h2>" 
                     .$tarefa['nome'] . "</h2></strong> " .$tarefa['descricao'] .
                 
-                " </div>";
+                "<br><button class='btn btn-primary'>Editar tarefa</button> <button class='btn btn-danger' onclick='excluirTarefa(".$tarefa['id'].")'>Excluir Tarefa</button>
+                </div>";
         }
         print "<button class='open-btn ' onclick=
         'abrirMenu()'>🖊 Nova Tarefa</button>";

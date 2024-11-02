@@ -21,6 +21,5 @@
                 <button class="card-lista">Criar Nova Lista</button>
         </div>
     </div>
-    <script src="..\controller\js\criar_tarefa.js"></script>
-    <script src="..\controller\js\mudar_lista.js"></script>
+    
 </body>
