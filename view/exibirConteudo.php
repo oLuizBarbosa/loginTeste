@@ -19,6 +19,10 @@
 
                 </div>
                 <button class="card-lista">Criar Nova Lista</button>
+                <div class="container">
+                    <button id="toggleButton" class="check-btn">Concluido</button>
+                </div>
+                <script src="checkbut.js"></script>
         </div>
     </div>
     
