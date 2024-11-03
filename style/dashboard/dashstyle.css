@@ -151,6 +151,24 @@ button{
     padding: 10px 20px;
     cursor: pointer;
 }
+/*botao de check*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.check-btn{
+    height: 5vh;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.377);
+    border: 0;
+    margin-top: 0.9em;
+    transition: background-color 0.3s, transform 0.3s;    
+}
+.check-btn.active {
+    background-color: green;
+    color: white;
+}
 
 /* Classe ativa para abrir o menu */
 .menu-overlay.active {
